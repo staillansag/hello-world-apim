@@ -1,10 +1,9 @@
----
 swagger: "2.0"
 info:
   version: "1.0"
   title: "HelloWorldAPI"
 host: "localhost:5555"
-basePath: "/HelloWorldAPI"
+basePath: "/hello-world"
 schemes:
 - "http"
 consumes:
@@ -12,9 +11,9 @@ consumes:
 produces:
 - "application/json"
 paths:
-  /hello:
+  /greetings:
     get:
-      operationId: "getHello"
+      operationId: "getGreetings"
       parameters:
       - name: "name"
         in: "query"
@@ -24,14 +23,17 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/GetHelloResponse"
+            $ref: "#/definitions/getGreetingsResponse"
         "401":
           description: "Access Denied"
 definitions:
-  GetHelloResponse:
-    type: "object"
+  getGreetingsResponse:
     required:
+    - "dateTime"
     - "message"
     properties:
       message:
         type: "string"
+      dateTime:
+        type: "string"
+        format: "date-time"

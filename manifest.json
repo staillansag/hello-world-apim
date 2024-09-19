@@ -28,7 +28,7 @@
         }
     ],
     "routing": {
-        "endpointUri": "${is-be-endpoint}/customer-management/${sys:resource_path}",
+        "endpointUri": "${is-be-endpoint}/hello-world/${sys:resource_path}",
         "method": "CUSTOM"
     },
     "backendAuthentication": {

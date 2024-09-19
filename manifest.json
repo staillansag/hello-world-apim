@@ -1,14 +1,14 @@
 {
     "metadata": {
-        "specificationFile": "CustomersAPI.yaml",
+        "specificationFile": "specification.yaml",
         "specificationType": "swagger",
-        "name": "CustomerManagementAPI",
+        "name": "HelloWorldAPI",
         "version": "1.0",
-        "description": "Customer Management API",
+        "description": "Hello World API",
         "team": "GreenTeam",
-        "groups": ["CRM"],
-        "tags": ["SugarCRM"],
-        "maturityState": "Beta",
+        "groups": [],
+        "tags": ["Tutorial"],
+        "maturityState": "Test",
         "scope": "local:demo",
         "developerPortal": "APIPortal",
         "community": "Public Community"

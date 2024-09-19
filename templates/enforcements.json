@@ -1,0 +1,26 @@
+[
+    {
+        "enforcements": [],
+        "stageKey": "requestPayloadProcessing"
+    },
+    {
+        "enforcements": [],
+        "stageKey": "routing"
+    },
+    {
+        "enforcements": [],
+        "stageKey": "LMT"
+    },
+    {
+        "enforcements": [],
+        "stageKey": "IAM"
+    },
+    {
+        "enforcements": [],
+        "stageKey": "transport"
+    },
+    {
+        "enforcements": [],
+        "stageKey": "responseProcessing"
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "name": "customers-be-url-alt",
+        "type": "endpoint",
+        "endPointURI": "https://msr-customers.sttlab.eu/customer-management"
+    },
+    {
+        "name": "customers-be-credentials-alt",
+        "type": "httpTransportSecurityAlias",
+        "authType": "HTTP_BASIC",
+        "authMode": "NEW",
+        "httpAuthCredentials": {
+            "userName": "your_username",
+            "password": "base64_encoded_password"
+        }
+    }
+]

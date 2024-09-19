@@ -1,0 +1,65 @@
+# Create and configure a new API proxy in the API gateway
+
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  - group: apim-variables
+
+jobs:
+ 
+- job: DeployAPI
+
+  steps:
+
+  - task: DownloadSecureFile@1
+    name: aliases
+    displayName: 'Get aliases file'
+    inputs:
+      secureFile: 'aliases.json'
+
+  - script: chmod u+x ./scripts/*.sh
+    displayName: 'Grant shell execution permissions'
+
+  - script: ./scripts/01_CheckManifest.sh
+    displayName: 'Check manifest.json file'
+
+  - script: ./scripts/10_SearchAPI.sh
+    displayName: 'Search API'
+    env:
+      APIGW_PASSWORD: $(APIGW_PASSWORD)
+
+  - script: ./scripts/11_CreateAPIDefinition.sh
+    displayName: 'Create API definition'
+    env:
+      APIGW_PASSWORD: $(APIGW_PASSWORD)
+
+  - script: ./scripts/12_UpdateAPIDefinition.sh
+    displayName: 'Update API definition'
+    env:
+      APIGW_PASSWORD: $(APIGW_PASSWORD)
+
+  - script: ./scripts/14_UpdateAPIMetadata.sh
+    displayName: 'Update API metadata'
+    env:
+      APIGW_PASSWORD: $(APIGW_PASSWORD)
+
+  - script: ./scripts/21_ManageEnforcements.sh
+    displayName: 'Update API policy enforcements'
+    env:
+      APIGW_PASSWORD: $(APIGW_PASSWORD)
+
+  - script: ./scripts/30_ActivateAPI.sh
+    displayName: 'Activate API'
+    env:
+      APIGW_PASSWORD: $(APIGW_PASSWORD)
+
+  - script: ./scripts/40_Publish.sh
+    displayName: 'Publish API to dev portal'
+    env:
+      APIGW_PASSWORD: $(APIGW_PASSWORD)

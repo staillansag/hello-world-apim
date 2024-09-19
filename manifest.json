@@ -1,0 +1,47 @@
+{
+    "metadata": {
+        "specificationFile": "CustomersAPI.yaml",
+        "specificationType": "swagger",
+        "name": "CustomerManagementAPI",
+        "version": "1.0",
+        "description": "Customer Management API",
+        "team": "GreenTeam",
+        "groups": ["CRM"],
+        "tags": ["SugarCRM"],
+        "maturityState": "Beta",
+        "scope": "local:demo",
+        "developerPortal": "APIPortal",
+        "community": "Public Community"
+    },
+    "transport": [
+        "https"
+    ],
+    "requestTransformations": [
+        {
+            "requestTransformationConfigurations": [
+                {
+                    "type": "addOrModify",
+                    "target": "${request.headers.Accept}",
+                    "value": "application/json"
+                }
+            ]
+        }
+    ],
+    "routing": {
+        "endpointUri": "${is-be-endpoint}/customer-management/${sys:resource_path}",
+        "method": "CUSTOM"
+    },
+    "backendAuthentication": {
+        "authType": "ALIAS",
+        "alias": "${is-be-creds}"
+    },
+    "throttling": {
+        "limit": "20",
+        "alertInterval": "1",
+        "alertIntervalUnit": "minutes",
+        "alertFrequency": "once",
+        "alertMessage": "Maximum number of calls per minute exceeded",
+        "destinations": ["GATEWAY", "APIPORTAL", "ELASTICSEARCH"],
+        "consumers": ["AllConsumers"]
+    }
+}

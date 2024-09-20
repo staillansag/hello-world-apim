@@ -7,7 +7,7 @@
         "description": "Hello World API",
         "team": "GreenTeam",
         "groups": [],
-        "tags": ["Tutorial"],
+        "tags": [],
         "maturityState": "Test",
         "scope": "local:demo",
         "developerPortal": "APIPortal",
@@ -36,7 +36,7 @@
         "alias": "${is-be-creds}"
     },
     "throttling": {
-        "limit": "20",
+        "limit": "10",
         "alertInterval": "1",
         "alertIntervalUnit": "minutes",
         "alertFrequency": "once",

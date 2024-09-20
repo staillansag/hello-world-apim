@@ -16,6 +16,7 @@ paths:
       operationId: "getGreetings"
       parameters:
       - name: "name"
+        description: name of the caller
         in: "query"
         required: true
         type: "string"

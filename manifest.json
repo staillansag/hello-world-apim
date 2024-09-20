@@ -2,7 +2,7 @@
     "metadata": {
         "specificationFile": "specification.yaml",
         "specificationType": "swagger",
-        "name": "HelloWorldAPI",
+        "name": "AnotherHelloWorldAPI",
         "version": "1.0",
         "description": "Hello World API",
         "team": "GreenTeam",
